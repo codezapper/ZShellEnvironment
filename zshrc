@@ -14,7 +14,7 @@ fi
 
 prompt agnoster
 
-. ~/zsh-history-substring-search.zsh
+#. ~/zsh-history-substring-search.zsh
 
 bindkey "OA" history-beginning-search-backward
 bindkey "OB" history-beginning-search-forward
