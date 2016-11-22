@@ -32,7 +32,7 @@ alias pull='git pull'
 bindkey -s "[24~" "git push"
 bindkey -s "[20~" "git status"
 bindkey -s "[15~" "git pull"
-bindkey -s "OQ" "cd ~/PythonCodeExercises/BattleGame"
+bindkey -s "OQ" "cd ~/PythonCodeExercises/PyLister"
 
 export TERM="xterm-256color"
 
