@@ -92,6 +92,6 @@ let g:Powerline_symbols = 'fancy'
 
 syntax on
 imap <C-BS> <C-W>
-map  :CommandT
+map  :CommandT<CR>
 
 
