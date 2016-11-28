@@ -29,10 +29,17 @@ alias commit='git commit'
 alias push='git push'
 alias pull='git pull'
 
-bindkey -s "[24~" "git push"
-bindkey -s "[20~" "git status"
-bindkey -s "[15~" "git pull"
-bindkey -s "OQ" "cd ~/PythonCodeExercises/PyLister"
+bindkey -s "[24~" "git push
+"
+bindkey -s "[20~" "git status
+"
+bindkey -s "[15~" "git pull
+"
+bindkey -s "OQ" "cd ~/PythonCodeExercises/PyLister
+"
 
 export TERM="xterm-256color"
 
+if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
