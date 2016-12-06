@@ -45,3 +45,8 @@ if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/GoProjects
+export GOBIN=$GOPATH/bin
+
