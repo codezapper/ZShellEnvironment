@@ -35,7 +35,7 @@ bindkey -s "[20~" "git status
 "
 bindkey -s "[15~" "git pull
 "
-bindkey -s "OQ" "cd ~/PythonCodeExercises/PyLister
+bindkey -s "OQ" "cd ~/PythonCodeExercises/SearchPlayer
 "
 
 export TERM="xterm-256color"
@@ -46,7 +46,7 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/GoProjects
+export PATH=$PATH:/usr/local/go/bin:/usr/local/hadoop/bin/
+export GOPATH=$HOME/GoProjects:/home/gabriele/GoProjects/github.com/codezapper/BinarySearch
 export GOBIN=$GOPATH/bin
 
