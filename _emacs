@@ -5,6 +5,7 @@
 (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-k") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-z") 'undo)
 (setq package-archives 
   '(("gnu" . "http://elpa.gnu.org/packages/")
     ("marmalade" . "https://marmalade-repo.org/packages/")
@@ -71,3 +72,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Space Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
+(add-to-list 'load-path "~/.emacs.d/emacs-pde/lisp")
+(load "pde-load")
+(add-to-list 'default-frame-alist '(fullscreen . maximized))

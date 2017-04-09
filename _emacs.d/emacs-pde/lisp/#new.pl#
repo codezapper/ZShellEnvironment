@@ -1,0 +1,45 @@
+#!/usr/bin/env perl -w
+# new.pl --- MAIN_PACKAGE
+# Author: gabriele <gabriele@gab-debian.workgroup>
+# Created: 09 Apr 2017
+# Version: 0.01
+
+use warnings;
+use strict;
+
+
+
+__END__
+
+=head1 NAME
+
+new.pl - Describe the usage of script briefly
+
+=head1 SYNOPSIS
+
+new.pl [options] args
+
+      -opt --long      Option description
+
+=head1 DESCRIPTION
+
+Stub documentation for new.pl, 
+
+=head1 AUTHOR
+
+gabriele, E<lt>gabriele@gab-debian.workgroupE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2017 by gabriele
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.2 or,
+at your option, any later version of Perl 5 you ma
+y have available.
+
+=head1 BUGS
+
+None reported... yet.
+
+=cut
