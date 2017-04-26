@@ -11,18 +11,30 @@ Bundle 'gmarik/vundle'
 " The bundles you install will be listed here
 
 filetype plugin indent on
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'vim-airline/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 " Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'wincent/Command-T'
+" Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'alvan/vim-closetag'
+Bundle 'Townk/vim-autoclose'
+Bundle 'tmhedberg/matchit'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'tpope/vim-surround'
 
 " The rest of your config follows here
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
+call plug#end()
 
 augroup vimrc_autocmds
     autocmd!
@@ -91,7 +103,18 @@ let g:CommandTMaxFiles=2000000
 let g:Powerline_symbols = 'fancy'
 
 syntax on
+let g:solarized_termcolors=256
+set background=dark
+"colorscheme solarized
 imap <C-BS> <C-W>
-map  :CommandT<CR>
-
-
+"map  :CommandT
+map  :Files
+map { S{
+map ' S'
+map " S"
+map ( S(
+map [ S[
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
