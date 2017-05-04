@@ -1,5 +1,12 @@
 set nocompatible
+set number
+
 filetype off
+
+set encoding=utf-8
+
+" set guifont=Source\ Code\ Pro\ for\ Powerline
+set guifont=Droid\ Sans\ Mono\ for\ Powerline
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
@@ -13,6 +20,7 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'vim-airline/vim-airline'
+" Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
@@ -28,12 +36,18 @@ Bundle 'tmhedberg/matchit'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'idanarye/vim-merginal'
+Bundle 'rdunklau/vim-perltidy'
+Bundle 'ConradIrwin/vim-bracketed-paste'
 
 " The rest of your config follows here
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny'  }
 call plug#end()
 
 augroup vimrc_autocmds
@@ -44,7 +58,7 @@ augroup vimrc_autocmds
     autocmd FileType python set nowrap
     augroup END
 
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
@@ -52,6 +66,8 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 map <F2> :NERDTreeToggle<CR>
+
+let g:airline_powerline_fonts = 1
 
 " Python-mode
 " Activate rope
@@ -114,7 +130,35 @@ map ' S'
 map " S"
 map ( S(
 map [ S[
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+map  :split<CR>
+nnoremap  :vs<CR>
+map <F9> :Gstatus<CR>
+map <F11> :MerginalToggle<CR>
+map <F12> gd
+map <C-F12> gf
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+autocmd BufNewFile,BufRead *.tt setf tt2
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+set pastetoggle=<F10>
+map <C-S-v> :"*yGp
+
