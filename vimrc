@@ -11,6 +11,8 @@ Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 colorscheme monokai
