@@ -1,5 +1,4 @@
 set rtp+=~/.fzf
-set termguicolors
 set pastetoggle=<F10>
 
 call plug#begin('~/.vim/plugged')
@@ -13,10 +12,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'ayu-theme/ayu-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme monokai
-set background=dark
+set termguicolors
+colorscheme gruvbox
+"set background=dark
+
+let ayucolor="light"
 
 let g:ale_linters = {'python': ['flake8'],}
 let g:jedi#use_tabs_not_buffers = 1
