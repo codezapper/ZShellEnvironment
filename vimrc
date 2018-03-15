@@ -14,6 +14,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
+Plug 'Chiel92/vim-autoformat'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 set termguicolors
@@ -26,6 +28,7 @@ let g:ale_linters = {'python': ['flake8'],}
 let g:jedi#use_tabs_not_buffers = 1
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
+
 
 " CTRL-Tab is next tab
 noremap <C-Tab> :<C-U>tabnext<CR>
@@ -74,6 +77,8 @@ set noerrorbells         " don't beep
 set nocompatible
 set hidden
 
+filetype plugin indent on
+
 hi CtrlSpaceNormal guifg=#e6db74 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
 hi CtrlSpaceSelected guifg=#ee0000 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
 " hi link CtrlSpaceSelected PMenuSel
@@ -93,3 +98,9 @@ endif
 
 " Open every file in its own tab
 au BufAdd,BufNewFile * nested tab sball
+
+let g:formatterpath = ['/home/tweed/tweed/TWHperlkit/root/bin/']
+let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsExpandTrigger="<C-K>"
+let g:UltiSnipsListSnippets="<C-S-K>"
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
