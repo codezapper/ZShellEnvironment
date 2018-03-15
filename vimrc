@@ -16,6 +16,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'Chiel92/vim-autoformat'
 Plug 'SirVer/ultisnips'
+Plug 'chrisbra/csv.vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 call plug#end()
 
 set termguicolors
@@ -104,3 +107,5 @@ let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsExpandTrigger="<C-K>"
 let g:UltiSnipsListSnippets="<C-S-K>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+
+autocmd BufWritePost * exe ":UpdateTags"
