@@ -1,5 +1,5 @@
 set rtp+=~/.fzf
-set pastetoggle=<F10>
+set pastetoggle=<F2>
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf.vim'
@@ -19,6 +19,9 @@ Plug 'SirVer/ultisnips'
 Plug 'chrisbra/csv.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+Plug 'python-mode/python-mode'
+Plug 'idanarye/vim-vebugger'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
 
 set termguicolors
@@ -53,6 +56,15 @@ nnoremap <C-Down> :tabnext<CR>
 noremap  :Files
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+"if &ft == 'java'
+"	nnoremap <F5> :call vebugger#jdb#start(expand('%:r'),{})<CR>
+"endif
+autocmd BufNewFile,BufRead *.java nnoremap <F5> :call vebugger#jdb#start(expand('%:r'),{})<CR>
+autocmd BufNewFile,BufRead *.py nnoremap <F5> :call call vebugger#pdb#start(@%,{})<CR>
+nnoremap <F6> :VBGcontinue<CR>
+nnoremap <F9> :VBGtoggleBreakpointThisLine<CR>
+nnoremap <F10> :VBGstepOut<CR>
+nnoremap <F11> :VBGstepIn<CR>
 
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -107,5 +119,7 @@ let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsExpandTrigger="<C-K>"
 let g:UltiSnipsListSnippets="<C-S-K>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+
+let g:vebugger_use_tags=1
 
 autocmd BufWritePost * exe ":UpdateTags"
