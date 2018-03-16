@@ -22,6 +22,9 @@ Plug 'xolox/vim-easytags'
 Plug 'python-mode/python-mode'
 Plug 'idanarye/vim-vebugger'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-user'
+Plug 'rhysd/vim-operator-surround'
 call plug#end()
 
 set termguicolors
@@ -65,6 +68,8 @@ nnoremap <F6> :VBGcontinue<CR>
 nnoremap <F9> :VBGtoggleBreakpointThisLine<CR>
 nnoremap <F10> :VBGstepOut<CR>
 nnoremap <F11> :VBGstepIn<CR>
+
+nnoremap <F12> 
 
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -122,4 +127,12 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 
 let g:vebugger_use_tags=1
 
+" Automatically update ctags on save
 autocmd BufWritePost * exe ":UpdateTags"
+
+vmap <silent>( <Plug>(operator-surround-append)(
+vmap <silent>[ <Plug>(operator-surround-append)[
+vmap <silent>{ <Plug>(operator-surround-append){
+vmap <silent>" <Plug>(operator-surround-append)"
+vmap <silent>' <Plug>(operator-surround-append)'
+
