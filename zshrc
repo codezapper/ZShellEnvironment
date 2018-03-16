@@ -50,3 +50,4 @@ export PATH=$PATH:/usr/local/go/bin:/usr/local/hadoop/bin/
 export GOPATH=$HOME/GoProjects:/home/gabriele/GoProjects/github.com/codezapper/BinarySearch
 export GOBIN=$GOPATH/bin
 
+export TERM=xterm-256color
