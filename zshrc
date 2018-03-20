@@ -38,8 +38,6 @@ bindkey -s "[15~" "git pull
 bindkey -s "OQ" "cd ~/PythonCodeExercises/SearchPlayer
 "
 
-export TERM="xterm-256color"
-
 if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
