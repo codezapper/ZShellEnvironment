@@ -56,7 +56,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-Up> :tabprevious<CR>
 nnoremap <C-Down> :tabnext<CR>
 
-noremap  :Files
+	noremap  :Files
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "if &ft == 'java'
@@ -69,7 +69,7 @@ nnoremap <F9> :VBGtoggleBreakpointThisLine<CR>
 nnoremap <F10> :VBGstepOut<CR>
 nnoremap <F11> :VBGstepIn<CR>
 
-nnoremap <F12> 
+nnoremap <F12> 
 
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -135,6 +135,7 @@ vmap <silent>[ <Plug>(operator-surround-append)[
 vmap <silent>{ <Plug>(operator-surround-append){
 vmap <silent>" <Plug>(operator-surround-append)"
 vmap <silent>' <Plug>(operator-surround-append)'
+vmap k y:grep "
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -150,3 +151,4 @@ vnoremap <silent> # :<C-U>
 
 " To fix vim background with tmux
 set t_ut=
+
