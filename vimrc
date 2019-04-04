@@ -18,7 +18,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <F5>  :VBGstartPDB %
+nnoremap <F5>  :VBGstartPDB3 %
 nnoremap <F6>  :VBGcontinue
 nnoremap <F8>  :VBGtoggleBreakpointThisLine
 nnoremap <F10> :VBGstepOver
@@ -35,10 +35,12 @@ au BufNewFile,BufRead *.py
 	\ set fileformat=unix
 
 highlight Pmenu ctermfg=15 ctermbg=8 guifg=#ffffff guibg=gray
+highlight PmenuSel ctermfg=15 ctermbg=0 guifg=#ffffff guibg=black
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 set ignorecase
-set nu
+set splitright
+set number
 
