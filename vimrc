@@ -6,6 +6,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'idanarye/vim-vebugger'
+Plug 'benmills/vimux'
 call plug#end()
 
 let python_highlight_all=1
@@ -42,5 +43,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
 set ignorecase
 set splitright
+set backspace=indent,eol,start
 set number
 
