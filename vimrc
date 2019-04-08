@@ -7,10 +7,14 @@ Plug 'nvie/vim-flake8'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'idanarye/vim-vebugger'
 Plug 'benmills/vimux'
+Plug 'tpope/vim-fugitive'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 call plug#end()
 
 let python_highlight_all=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:easytags_events = ['BufWritePost']
 
 syntax on
 
@@ -38,6 +42,8 @@ au BufNewFile,BufRead *.py
 highlight Pmenu ctermfg=15 ctermbg=8 guifg=#ffffff guibg=gray
 highlight PmenuSel ctermfg=15 ctermbg=0 guifg=#ffffff guibg=black
 highlight BadWhitespace ctermbg=red guibg=red
+highlight LineNr ctermbg=0 ctermfg=12
+highlight CursorLine cterm=NONE ctermbg=darkgray
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
@@ -45,4 +51,7 @@ set ignorecase
 set splitright
 set backspace=indent,eol,start
 set number
-
+set laststatus=2
+set statusline=%#Pmenu#%{FugitiveStatusline()}
+set statusline+=%#LineNr#\ %F
+set cursorline
