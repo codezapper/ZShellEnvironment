@@ -30,6 +30,12 @@ nnoremap <F10> :VBGstepOver
 nnoremap <F11> :VBGstepIn
 nnoremap <S-E> :VBGevalSelectedText
 
+vmap <leader>( o<ESC>i(<ESC>gvo<ESC>a)<ESC>
+vmap <leader>[ o<ESC>i[<ESC>gvo<ESC>a]<ESC>
+vmap <leader>{ o<ESC>i{<ESC>gvo<ESC>a}<ESC>
+vmap <leader>' o<ESC>i'<ESC>gvo<ESC>a'<ESC>
+vmap <leader>" o<ESC>i"<ESC>gvo<ESC>a"<ESC>
+
 au BufNewFile,BufRead *.py
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
