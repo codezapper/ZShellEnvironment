@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -10,11 +9,34 @@ Plug 'benmills/vimux'
 Plug 'tpope/vim-fugitive'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+Plug 'junegunn/limelight.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 let python_highlight_all=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:easytags_events = ['BufWritePost']
+
+let g:limelight_conceal_ctermfg = 'gray'
+" let g:limelight_conceal_ctermfg=240
+let g:limelight_conceal_guifg = 'DarkGray'
+" let g:limelight_conceal_guifg = '#777777'
+let g:limelight_default_coefficient = 0.7
+let g:limelight_paragraph_span = 1
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+" let g:limelight_priority = -1
+" 
+" " Color name (:help cterm-colors) or ANSI code
+" let g:limelight_conceal_ctermfg = 100
+" 
+" " Color name (:help gui-colors) or RGB color
+" let g:limelight_conceal_guifg = '#83a598'
+
+let g:vim_markdown_folding_disabled = 1
 
 syntax on
 
