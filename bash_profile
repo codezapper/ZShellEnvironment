@@ -23,16 +23,10 @@ is_in_git_repo() {
 }
 
 gb() {
-  # "Nothing to see here, move along"
-  is_in_git_repo || return
-
-  # Pass the list of the branches to fzf-tmux
-  # - "{}" in preview option is the placeholder for the highlighted entry
-  # - Preview window can display ANSI colors, so we enable --color=always
-  # - We can terminate `git show` once we have $LINES lines
- git branch -a |
-    fzf-tmux --multi --preview-window right:70% \
-             --preview 'git show --color=always {} | head -'$LINES
+  is_in_git_repo &&
+    git branch -a | grep -v '/HEAD\s' | sed 's/^[ \t]*//;s/[ \t]*$//' |
+    fzf --preview-window right:70% \
+             --preview 'git show --color=always {}'
 }
 
 gt() {
