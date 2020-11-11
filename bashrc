@@ -1,3 +1,8 @@
+source ~/code/stack-kubernetes/bin/source/functions/set_workspace.sh
+source ~/code/stack-kubernetes/bin/source/functions/start_kube_shell.sh
+source ~/code/stack-kubernetes/bin/source/prompt/01-colors.sh
+source ~/code/stack-kubernetes/bin/source/prompt/02-prompt.sh
+
 alias l='ls -la'
 alias add='git add'
 alias commit='git commit'
@@ -19,7 +24,7 @@ is_in_git_repo() {
 
 gb() {
   is_in_git_repo &&
-    git branch -a | grep -v '/HEAD\s' | sed 's/^[ \t]*//;s/[ \t]*$//' |
+    git branch -a | grep -v '/HEAD\s' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/^remotes\///' |
     fzf --preview-window right:70% \
              --preview 'git show --color=always {}'
 }
